@@ -11,3 +11,6 @@ Route::post('/topsecret_split/{id}', [FuncionesController::class, 'topsecret_spl
 Route::post('/topsecret', [FuncionesController::class, 'topsecret']);
 
 
+Route::get('/ddd', function () {
+    echo 'ddd';
+});

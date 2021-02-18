@@ -1,0 +1,8 @@
+ssh -i "prueba.pem" root@ec2-54-84-205-77.compute-1.amazonaws.com
+
+AKIA3TKAF56UWAJBTPMW
+
+
+Host git-codecommit.*.amazonaws.com
+  User APKA3TKAF56U52ZVMB6Q
+  IdentityFile prueba_meli
