@@ -12,7 +12,7 @@ phases:
     # login to Elastic container registry
     - eval $(aws ecr get-login --region us-east-1 --no-include-email | sed 's|https://||')
     - REPOSITORY_URI=public.ecr.aws/g9s3e0m0/meli_prueba
-    - IMAGE_TAG=1.0
+    - IMAGE_TAG=4.0
   build:
     commands:
     - echo Build started on `date`
