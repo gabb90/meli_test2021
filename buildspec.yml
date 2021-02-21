@@ -1,8 +1,8 @@
 
-version: 0.2
+version: 2.0
 
 phases:
-  install: 
+  install:
     runtime-versions:
       php: 7.3
   pre_build: # commands to be run before build
