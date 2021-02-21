@@ -11,7 +11,7 @@ phases:
     - aws --version
     # login to Elastic container registry
     - eval $(aws ecr get-login --region us-east-1 --no-include-email | sed 's|https://||')
-    - REPOSITORY_URI=public.ecr.aws/g9s3e0m0/meli_prueba
+    - REPOSITORY_URI=797387911081.dkr.ecr.us-east-1.amazonaws.com/meli_prueba
     - IMAGE_TAG=1.0
     - IMAGE_URI="${REPOSITORY_URI}:${TAG}"
   build:
