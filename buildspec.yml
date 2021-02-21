@@ -13,6 +13,7 @@ phases:
     - eval $(aws ecr get-login --region us-east-1c --no-include-email | sed 's|https://||')
     - REPOSITORY_URI=public.ecr.aws/g9s3e0m0/meli_prueba
     - IMAGE_TAG=1.0
+    - IMAGE_URI="${REPOSITORY_URI}:${TAG}"
   build:
     commands:
     - echo Build started on `date`
@@ -24,10 +25,10 @@ phases:
     - php artisan key:generate
     - echo Building the Docker image...
     - docker build -t $REPOSITORY_URI:latest .
-    - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+    - docker tag $REPOSITORY_URI:latest "$IMAGE_URI"
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker image ls -a
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - docker push "$IMAGE_URI"
