@@ -10,7 +10,7 @@ phases:
     - echo Logging in to Amazon ECR....
     - aws --version
     # login to Elastic container registry
-    - eval $(aws ecr get-login --region us-east-1 --no-include-email | sed 's|https://||')
+    - eval $(aws ecr get-login --region us-east-1c --no-include-email | sed 's|https://||')
     - REPOSITORY_URI=public.ecr.aws/g9s3e0m0/meli_prueba
     - IMAGE_TAG=1.0
   build:
