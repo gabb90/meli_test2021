@@ -27,7 +27,7 @@ class Funcion extends Model
         } elseif (($x2 - 100) ** 2 + ($y + 100) ** 2 == $r2 ** 2 && ($x2 - 500) ** 2 + ($y - 100) ** 2 == $r3 ** 2) {
             $x = $x2;
         } else {
-            $x = 'No se encontro x: x1 = ' . $x1 . '; x2 = ' . $x2;
+            return false;
         }
 
         return [
