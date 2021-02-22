@@ -9,8 +9,3 @@ Route::get('/', function () {
 
 Route::post('/topsecret_split/{id}', [FuncionesController::class, 'topsecret_split']);
 Route::post('/topsecret', [FuncionesController::class, 'topsecret']);
-
-
-Route::get('/ddd', function () {
-    echo 'ddd';
-});
