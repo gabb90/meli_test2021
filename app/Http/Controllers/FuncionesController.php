@@ -17,6 +17,13 @@ class FuncionesController extends Controller
             $satelites[$satelite['name']] = $satelite;
         }
 
+        $position = Funcion::GetLocation($satelites['kenobi']['distance'], $satelites['skywalker']['distance'], $satelites['sato']['distance']);
+        $message = Funcion::GetMessage($satelites['kenobi']['message'], $satelites['skywalker']['message'], $satelites['sato']['message']);
+
+        if ($position === false || $message === false) {
+            // return response('No se decodifico la posicion/mensaje', 400);
+        }
+
         $result = [
             'position' => Funcion::GetLocation($satelites['kenobi']['distance'], $satelites['skywalker']['distance'], $satelites['sato']['distance']),
             'message' => Funcion::GetMessage($satelites['kenobi']['message'], $satelites['skywalker']['message'], $satelites['sato']['message']),
@@ -42,9 +49,7 @@ class FuncionesController extends Controller
             $request->session()->flush();
 
         } else {
-            http_response_code(404);
-            print_r('Faltan datos.');
-            return;
+            return response('No se decodifico la posicion/mensaje', 400);
         }
 
         return response()->json(
