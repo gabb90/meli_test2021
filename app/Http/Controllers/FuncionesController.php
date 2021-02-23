@@ -76,7 +76,7 @@ class FuncionesController extends Controller
         }
 
         return response()->json(
-            compact('result')
+            compact('result'), 200
         );
     }
 }
