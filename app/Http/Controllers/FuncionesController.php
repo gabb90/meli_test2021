@@ -51,7 +51,7 @@ class FuncionesController extends Controller
 
         // si no se puede resolver alguna de las funciones, devuelvo un 400 y termino la ejecucion
         if ($position === false || $message === false) {
-            return response('No se decodifico la posicion/mensaje', 400);
+            return response('No se ha podido determinar la posicion y/o el mensaje', 400);
         }
 
         $result = [
