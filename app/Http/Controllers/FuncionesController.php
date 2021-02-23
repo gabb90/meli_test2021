@@ -46,7 +46,6 @@ class FuncionesController extends Controller
 
     private static function respuesta(array $kenobi, array $skywalker, array $sato)
     {
-        print_r($sato);
         $position = Funcion::GetLocation($kenobi['distance'], $skywalker['distance'], $sato['distance']);
         $message = Funcion::GetMessage($kenobi['message'], $skywalker['message'], $sato['message']);
 
